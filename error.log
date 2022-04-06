@@ -210,3 +210,27 @@
 {"level":"error","message":"jwt expired","timestamp":"2022-04-06 04:33:28 PM +0530"}
 {"level":"error","message":"Error occurred","timestamp":"2022-04-06 04:33:28 PM +0530"}
 {"level":"error","message":"jwt expired","timestamp":"2022-04-06 04:33:28 PM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-06 11:05:19 PM +0530"}
+{"level":"error","message":"jwt expired","timestamp":"2022-04-06 11:05:19 PM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-06 11:05:19 PM +0530"}
+{"level":"error","message":"jwt expired","timestamp":"2022-04-06 11:05:19 PM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-06 11:55:18 PM +0530"}
+{"level":"error","message":"jwt expired","timestamp":"2022-04-06 11:55:18 PM +0530"}
+{"level":"error","message":"Error in creating Product in: ","timestamp":"2022-04-07 12:01:37 AM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 12:01:37 AM +0530"}
+{"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:01:37 AM +0530"}
+{"level":"error","message":"Error in creating Product in: ","timestamp":"2022-04-07 12:02:53 AM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 12:02:53 AM +0530"}
+{"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:02:53 AM +0530"}
+{"level":"error","message":"Error in creating Product in: ","timestamp":"2022-04-07 12:04:30 AM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 12:04:30 AM +0530"}
+{"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:04:30 AM +0530"}
+{"level":"error","message":"Error in creating Product in: ","timestamp":"2022-04-07 12:06:10 AM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 12:06:10 AM +0530"}
+{"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:06:10 AM +0530"}
+{"level":"error","message":"Error in creating Product in: ","timestamp":"2022-04-07 12:06:32 AM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 12:06:32 AM +0530"}
+{"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:06:32 AM +0530"}
+{"level":"error","message":"Error in creating Product in: ","timestamp":"2022-04-07 12:07:19 AM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 12:07:19 AM +0530"}
+{"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:07:19 AM +0530"}

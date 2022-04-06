@@ -2,7 +2,7 @@ const ProductService = require('../Services/ProductService')
 const { validationResult } = require('express-validator')
 const ErrorBody = require('../Utils/ErrorBody')
 const { logger } = require('../Utils/Logger')
-const generateRandomQuantity = require('../Utils/GenerateRandomQuantity')
+const {generateRandomQuantity, generateRandomRating} = require('../Utils/GenerateRandomData')
 
 function getProductById (req, res, next) {
     ProductService.getProductById(req.params.productId)
@@ -237,6 +237,46 @@ function scrapeAndCreateProducts (req, res, next) {
         })
 }
 
+function scrapeAndCreateBooks (req, res, next) {
+    ProductService.scrapeBooks()
+        .then((response) => {
+            var products = []
+            response.data.books.forEach(data  => {
+                const product = {
+                    name: data.title,
+                    description: data.subtitle,
+                    category: "books",
+                    imageUrl: data.image,
+                    quantity: generateRandomQuantity(10, 100),
+                    rating: generateRandomRating(),
+                    price: Number(data.price.split("$")[1])
+                }
+                products.push(product)
+            })
+            var promiseArray = []
+
+            products.map(product => {
+                promiseArray.push(ProductService.createScrapedProducts(product))
+                return null
+            })
+
+            Promise.all([...promiseArray])
+                .then(() => {
+                    res.status(200);
+                    res.json({message: "Success"})
+                })
+                .catch((err) => {
+                    logger.error("Unable to add product")
+                    logger.error(JSON.stringify(err))
+                    new ErrorBody(500, "Server Error Occured");
+                })
+        })
+        .catch((error) => {
+            logger.error("Failed to fetch products", error)
+            next(new ErrorBody( error.statusCode || 500, error.errorMessage || "Server Error occured"));
+        })
+}
+
 function listCategories (req, res, next) {
     ProductService.listCategories()
         .then((categories) => {
@@ -266,6 +306,7 @@ module.exports = {
     deleteProduct: deleteProduct,
     searchProductByName: searchProductByName,
     scrapeAndCreateProducts: scrapeAndCreateProducts,
+    scrapeAndCreateBooks: scrapeAndCreateBooks,
     filterProductsByCategory: filterProductsByCategory,
     listCategories: listCategories
 }

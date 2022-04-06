@@ -77,6 +77,10 @@ function scrapeProducts() {
   return axios.get(env.fakeStoreUrl)
 }
 
+function scrapeBooks() {
+  return axios.get(env.itbooksUrl)
+}
+
 function createScrapedProducts(product) {
   return new Promise((resolve, reject) => {
       Category.findOneAndUpdate(
@@ -114,5 +118,6 @@ module.exports = {
     filterProductsByCategory: filterProductsByCategory,
     scrapeProducts: scrapeProducts,
     createScrapedProducts: createScrapedProducts,
-    listCategories: listCategories
+    listCategories: listCategories,
+    scrapeBooks: scrapeBooks
 }

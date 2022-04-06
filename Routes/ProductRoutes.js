@@ -28,7 +28,9 @@ router.post(
     productController.addProduct
 )
 
-router.get('/scrape', productController.scrapeAndCreateProducts)
+router.get('/scrape/products', productController.scrapeAndCreateProducts)
+
+router.get('/scrape/books', productController.scrapeAndCreateBooks)
 
 router.put('/:productId', verifyToken, productController.updateProduct)
 
