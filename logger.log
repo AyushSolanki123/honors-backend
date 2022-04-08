@@ -630,3 +630,11 @@
 {"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:07:19 AM +0530"}
 {"level":"info","message":"Product: Shirt created successfully","timestamp":"2022-04-07 12:07:40 AM +0530"}
 {"level":"info","message":"Product: Practical Linux Forensics updated successfully","timestamp":"2022-04-07 12:25:03 AM +0530"}
+{"level":"info","message":"Connected to mongodb successfully","timestamp":"2022-04-07 03:22:28 PM +0530"}
+{"level":"info","message":"Server started at port 3000","timestamp":"2022-04-07 03:22:28 PM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 03:26:26 PM +0530"}
+{"level":"info","message":"{\"statusCode\":401,\"errorMessage\":\"jwt expired\"}","timestamp":"2022-04-07 03:26:26 PM +0530"}
+{"level":"error","message":"jwt expired","timestamp":"2022-04-07 03:26:26 PM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 03:52:17 PM +0530"}
+{"level":"info","message":"{\"statusCode\":401,\"errorMessage\":\"jwt expired\"}","timestamp":"2022-04-07 03:52:17 PM +0530"}
+{"level":"error","message":"jwt expired","timestamp":"2022-04-07 03:52:17 PM +0530"}

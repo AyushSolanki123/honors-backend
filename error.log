@@ -234,3 +234,7 @@
 {"level":"error","message":"Error in creating Product in: ","timestamp":"2022-04-07 12:07:19 AM +0530"}
 {"level":"error","message":"Error occurred","timestamp":"2022-04-07 12:07:19 AM +0530"}
 {"level":"error","message":"Invalid values in the form","timestamp":"2022-04-07 12:07:19 AM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 03:26:26 PM +0530"}
+{"level":"error","message":"jwt expired","timestamp":"2022-04-07 03:26:26 PM +0530"}
+{"level":"error","message":"Error occurred","timestamp":"2022-04-07 03:52:17 PM +0530"}
+{"level":"error","message":"jwt expired","timestamp":"2022-04-07 03:52:17 PM +0530"}

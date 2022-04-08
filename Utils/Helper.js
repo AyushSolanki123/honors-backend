@@ -1,12 +1,12 @@
 const jwt = require('jsonwebtoken')
 const { env } = require('../env')
 
-function generateAuthPairs (payload, refreshPayload, isMerchant = false) {
+function generateAuthPairs (payload, refreshPayload) {
   return new Promise((resolve, reject) => {
-    const jwtKey = isMerchant ? env.merchantJwtKey : env.jwtKey
-    const refreshKey = isMerchant ? env.merchantRefreshKey : env.refreshKey
+    const jwtKey = process.env.jwtKey
+    const refreshKey = process.env.refreshKey
     const authToken = jwt.sign(payload, jwtKey, {
-      expiresIn: env.tokenValidity
+      expiresIn: process.env.tokenValidity
     })
     const refreshToken = jwt.sign(refreshPayload, refreshKey)
     resolve({
@@ -19,8 +19,8 @@ function generateAuthPairs (payload, refreshPayload, isMerchant = false) {
 function validateAuthToken (token, tokenType = 0, isMerchant = false) {
   // 0 for auth token , 1 for refresh token
   return new Promise(function (resolve, reject) {
-    const jwtKey = isMerchant ? env.merchantJwtKey : env.jwtKey
-    const refreshKey = isMerchant ? env.merchantRefreshKey : env.refreshKey
+    const jwtKey = process.env.jwtKey
+    const refreshKey = process.env.refreshKey
     jwt.verify(
       token,
       tokenType === 0 ? jwtKey : refreshKey,
