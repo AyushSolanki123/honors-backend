@@ -1,4 +1,7 @@
 env.js
 
+error.log
+logger.log
+
 package-lock.json
 node_modules
