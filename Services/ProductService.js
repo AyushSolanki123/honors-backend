@@ -74,11 +74,11 @@ function filterProductsByCategory(category) {
 }
 
 function scrapeProducts() {
-  return axios.get(process.env.fakeStoreUrl)
+  return axios.get(env.fakeStoreUrl)
 }
 
 function scrapeBooks() {
-  return axios.get(process.env.itbooksUrl)
+  return axios.get(env.itbooksUrl)
 }
 
 function createScrapedProducts(product) {

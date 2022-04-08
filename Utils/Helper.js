@@ -3,8 +3,8 @@ const { env } = require('../env')
 
 function generateAuthPairs (payload, refreshPayload) {
   return new Promise((resolve, reject) => {
-    const jwtKey = process.env.jwtKey
-    const refreshKey = process.env.refreshKey
+    const jwtKey = env.jwtKey
+    const refreshKey = env.refreshKey
     const authToken = jwt.sign(payload, jwtKey, {
       expiresIn: process.env.tokenValidity
     })
@@ -16,11 +16,11 @@ function generateAuthPairs (payload, refreshPayload) {
   })
 }
 
-function validateAuthToken (token, tokenType = 0, isMerchant = false) {
+function validateAuthToken (token, tokenType = 0) {
   // 0 for auth token , 1 for refresh token
   return new Promise(function (resolve, reject) {
-    const jwtKey = process.env.jwtKey
-    const refreshKey = process.env.refreshKey
+    const jwtKey = env.jwtKey
+    const refreshKey = env.refreshKey
     jwt.verify(
       token,
       tokenType === 0 ? jwtKey : refreshKey,
