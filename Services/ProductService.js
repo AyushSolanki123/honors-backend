@@ -1,5 +1,4 @@
 const { default: axios } = require('axios')
-const { env } = require('../env')
 
 const Product = require('../Models/Product').model
 const Category = require('../Models/Category').model
@@ -74,11 +73,11 @@ function filterProductsByCategory(category) {
 }
 
 function scrapeProducts() {
-  return axios.get(env.fakeStoreUrl)
+  return axios.get(process.env.fakeStoreUrl)
 }
 
 function scrapeBooks() {
-  return axios.get(env.itbooksUrl)
+  return axios.get(process.env.itbooksUrl)
 }
 
 function createScrapedProducts(product) {

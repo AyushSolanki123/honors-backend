@@ -79,7 +79,7 @@ function addProduct (req, res, next) {
 }
 
 function updateProduct (req, res, next) {
-    ProductService.updateProduct(req.params.productId, res.body)
+    ProductService.updateProduct(req.params.productId, req.body)
         .then((product) => {
             if (product) {
                 logger.log(`Product: ${product.name} updated successfully`)
@@ -196,6 +196,28 @@ function filterProductsByCategory (req, res, next) {
 
 }
 
+function listCategories (req, res, next) {
+    ProductService.listCategories()
+        .then((categories) => {
+            res.status(200)
+            res.json({
+                count: categories.length,
+                data: categories
+            })
+        })
+        .catch((error) => {
+            logger.error('Unable to list the products at the moment')
+            logger.error(JSON.stringify(error.errorMessage))
+            next(
+                new ErrorBody(
+                    error.statusCode || 500,
+                    error.errorMessage || "Server Error Occured"
+                )
+            )
+        })
+}
+
+
 function scrapeAndCreateProducts (req, res, next) {
     ProductService.scrapeProducts()
         .then((response) => {
@@ -274,27 +296,6 @@ function scrapeAndCreateBooks (req, res, next) {
         .catch((error) => {
             logger.error("Failed to fetch products", error)
             next(new ErrorBody( error.statusCode || 500, error.errorMessage || "Server Error occured"));
-        })
-}
-
-function listCategories (req, res, next) {
-    ProductService.listCategories()
-        .then((categories) => {
-            res.status(200)
-            res.json({
-                count: categories.length,
-                data: categories
-            })
-        })
-        .catch((error) => {
-            logger.error('Unable to list the products at the moment')
-            logger.error(JSON.stringify(error.errorMessage))
-            next(
-                new ErrorBody(
-                    error.statusCode || 500,
-                    error.errorMessage || "Server Error Occured"
-                )
-            )
         })
 }
 
