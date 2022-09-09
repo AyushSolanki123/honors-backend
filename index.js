@@ -30,7 +30,7 @@ mongoose.connect(env.MONGO_DB_STRING, {}, (err) => {
     return
   }
   logger.log('Connected to mongodb successfully')
-  app.listen(3000, () => {
+  app.listen(3004, () => {
     logger.log('Server started at port 3000')
   })
 })

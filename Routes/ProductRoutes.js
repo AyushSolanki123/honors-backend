@@ -6,34 +6,38 @@ const { body } = require("express-validator");
 const productController = require("../Controllers/ProductController");
 const { verifyToken } = require("../MiddleWare/VerifyToken");
 
-router.get('/', verifyToken, productController.listProducts)
+router.get("/", productController.listProducts);
 
-router.get('/get/:productId', verifyToken, productController.getProductById)
+router.get("/get/:productId", verifyToken, productController.getProductById);
 
-router.get('/search/:name', verifyToken, productController.searchProductByName)
+router.get("/search/:name", verifyToken, productController.searchProductByName);
 
-router.get('/filter/:categoryId', verifyToken, productController.filterProductsByCategory)
+router.get(
+	"/filter/:categoryId",
+	verifyToken,
+	productController.filterProductsByCategory
+);
 
-router.get('/category', verifyToken, productController.listCategories)
+router.get("/category", verifyToken, productController.listCategories);
 
 router.post(
-    '/',
-    [
-        body('name').notEmpty(),
-        body('price').isNumeric(),
-        body('quantity').isNumeric(),
-        body('category').notEmpty()
-    ],
-    verifyToken,
-    productController.addProduct
-)
+	"/",
+	[
+		body("name").notEmpty(),
+		body("price").isNumeric(),
+		body("quantity").isNumeric(),
+		body("category").notEmpty(),
+	],
+	verifyToken,
+	productController.addProduct
+);
 
-router.get('/scrape/products', productController.scrapeAndCreateProducts)
+router.get("/scrape/products", productController.scrapeAndCreateProducts);
 
-router.get('/scrape/books', productController.scrapeAndCreateBooks)
+router.get("/scrape/books", productController.scrapeAndCreateBooks);
 
-router.put('/:productId', verifyToken, productController.updateProduct)
+router.put("/:productId", verifyToken, productController.updateProduct);
 
-router.delete('/:productId', verifyToken, productController.deleteProduct)
+router.delete("/:productId", verifyToken, productController.deleteProduct);
 
 module.exports = router;
